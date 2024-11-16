@@ -1,4 +1,5 @@
-import Filtering from "./filtering";
+
+import Filtering from "/src/expenseBoard/Filtering.jsx";
 import NoData from "./NoData";
 import Sorting from "./Sorting";
 import { useState } from "react";
