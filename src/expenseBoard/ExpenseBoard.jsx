@@ -37,6 +37,7 @@ const ExpenseBoard = () => {
   const handleSubmit = (formData) => {
     if(isEdit){
       if(formData.type === "expense"){
+        setIsActive("expense"); 
         const updatedData = data.expenses.map((item) => {
           if(item.id === formData.id){
             return {...formData, amount: parseFloat(formData.amount)};
@@ -48,7 +49,9 @@ const ExpenseBoard = () => {
           expenses: updatedData
         });
         setIsEdit(false);
+
       }else{
+        setIsActive("income");
         const updatedData = data.incomes.map((item) => {
           if(item.id === formData.id){
             return {...formData, amount: parseFloat(formData.amount)};
